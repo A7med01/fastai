@@ -3,7 +3,7 @@ from .torch_imports import *
 
 def accuracy_np(preds, targs):
     preds = np.argmax(preds, 1)
-    return (preds==targs).mean()
+    return np.mean(preds==targs)
 
 def accuracy(preds, targs):
     preds = torch.max(preds, dim=1)[1]
